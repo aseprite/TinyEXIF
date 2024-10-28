@@ -3,8 +3,6 @@ cmake_minimum_required(VERSION 3.1)
 project(TinyEXIF)
 include(GNUInstallDirs)
 
-find_package(tinyxml2 REQUIRED)
-
 #CMAKE_BUILD_TOOL
 
 ################################
@@ -142,10 +140,6 @@ if(BUILD_STATIC_LIBS)
 			add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 		endif()
 	endif()
-
-	# export targets for find_package config mode
-	export(TARGETS TinyEXIFstatic
-			FILE ${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}Targets.cmake)
 
 	install(TARGETS TinyEXIFstatic
 			EXPORT ${CMAKE_PROJECT_NAME}Targets
